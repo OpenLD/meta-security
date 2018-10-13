@@ -1,4 +1,1 @@
-OS_RELEASE_FIELDS += "CPE_NAME"
-
-CPE_NAME="cpe:/o:openembedded:nodistro:0"
-
+require ${@bb.utils.contains('DISTRO_FEATURES', 'test-security-compliance', 'security-compliance.inc', '', d)}

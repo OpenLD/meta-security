@@ -2,6 +2,21 @@
 
 This layer is meant to contain programs to help in security compliance and auditing
 
+The recipes in this layer needs to have 'test-security-compliance' in DISTRO_FEATURES
+to have effect. To enable them, add in configuration file the following line.
+
+  DISTRO_FEATURES_append = " test-security-compliance"
+
+If meta-security-compliance is included, but compliace is not enabled as a
+distro feature a warning is printed at parse time:
+
+    You have included the meta-security-compliance layer, but
+    'test-security-compliance' has not been enabled in your DISTRO_FEATURES.
+
+If you know what you are doing, this warning can be disabled by setting the following
+variable in your configuration:
+
+  SKIP_META_SECURITY_COMPLIANCE_SANITY_CHECK = 1
 
 Dependencies
 ============
